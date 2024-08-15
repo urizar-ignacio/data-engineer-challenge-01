@@ -3,8 +3,7 @@ from datetime import datetime
 from pandas import DataFrame
 import json
 
-def q1_time(file_path: str) -> List[Tuple[datetime.date, str]]:
-    import json
+def q1_benchmark(file_path: str) -> List[Tuple[datetime.date, str]]:
     records = []
     with open(f"/app/data/{file_path}") as jfile:
         for line in jfile:

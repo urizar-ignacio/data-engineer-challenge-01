@@ -9,14 +9,14 @@ def q1_memory(file_path: str) -> List[Tuple[datetime.date, str]]:
     with open(f"/app/data/{file_path}") as jfile:
         for line in jfile:
             jline = loads(line)
-            records.append({"date": jline["date"][:10], "username": jline["user"]["username"]})
+            records.append((jline["date"][:10], jline["user"]["username"]))
     
-    ordered_by_date_records = sorted(records, key=lambda x: x["date"])
-    count_by_date = [(k, len(list(g))) for k, g in (groupby(ordered_by_date_records, lambda x: x["date"]))]
+    ordered_by_date_records = sorted(records, key=lambda x: x[0])
+    count_by_date = [(k, len(list(g))) for k, g in (groupby(ordered_by_date_records, lambda x: x[0]))]
     top_count_by_day = sorted(count_by_date, key=lambda x: x[1], reverse=True)[:10]
 
-    ordered_by_date_username_records = sorted(records, key=lambda x: (x["date"], x["username"]))
-    count_by_date_and_user = [(k, len(list(g))) for k, g in (groupby(ordered_by_date_username_records, lambda x: (x["date"],x["username"])))]
+    ordered_by_date_username_records = sorted(records, key=lambda x: (x[0], x[1]))
+    count_by_date_and_user = [(k, len(list(g))) for k, g in (groupby(ordered_by_date_username_records, lambda x: (x[0],x[1])))]
 
     results = []
     for top_date in top_count_by_day:

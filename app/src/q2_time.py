@@ -26,7 +26,7 @@ def q2_time(file_path: str) -> List[Tuple[str, int]]:
     threads = []
     results = []
 
-    chunk_size = 5000
+    chunk_size = 10000
     for i in range((len(records)//chunk_size)+1):
         task = Thread(target=count_emojis, kwargs={"record_list":records[i*chunk_size:(i+1)*chunk_size], "emoji_list": emoji_list, "results":results})
         threads.append(task)
@@ -36,7 +36,6 @@ def q2_time(file_path: str) -> List[Tuple[str, int]]:
             task.join()
 
     c = Counter()
-
     for count in results:
         c.update(count)
     

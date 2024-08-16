@@ -1,6 +1,4 @@
 __pycache__/
-data/
 sandbox/
 .ipynb_checkpoints
-*.zip
 *.DS_STORE

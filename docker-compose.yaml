@@ -1,0 +1,9 @@
+services:
+  main-app:
+    build: .
+    volumes:
+      - type: bind
+        source: ./app
+        target: /app
+    ports:
+      - 8888:8888

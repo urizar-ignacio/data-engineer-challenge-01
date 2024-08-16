@@ -1,0 +1,4 @@
+__pycache__/
+sandbox/
+.ipynb_checkpoints
+*.DS_STORE

@@ -5,6 +5,11 @@
 
 ## Contenido del repositorio:
 - El código con las soluciones se encuentra en la ruta `app/src/`
+- El desarrollo y análisis completo del proyecto se encuentra en el archivo `app/src/challenge.ipynb`
+- Se incluye un archivo con dependencias necesarias para el correcto funcionamiento del proyecto en `app/requirements.txt`
+- Data de muestra se encuentra en archivo comprimido en `app/data/tweets.json.zip` (leer sección **Antes de comenzar**)
+- Archivos de configuración de ambiente de desarrollo: `Dockerfile` y `docker-compose.yaml` con detalle de contenedor en que se ejecutó el proyecto.
+- El archivo `CHALLENGE_README.md` contiene el enunciado del proyecto y las preguntas a responder. 
 
 ## Antes de comenzar:
 Dado que el límite de tamaño de archivos en GitHub es de 100 MB, se incluyó la versión comprimida de la muestra de datos en formato zip en la ruta `app/data/`. Es necesario descomprimir este archivo antes de ejecutar cualquier método de este proyecto.
